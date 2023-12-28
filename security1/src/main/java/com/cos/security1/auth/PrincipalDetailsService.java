@@ -17,6 +17,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
 
     // 반환한 UserDetails가 Authentication 내부에 주입 -> Authentication이 시큐리티 session에 주입 (Security ContextHolder)
+    // 해당 함수가 종료될 때 @AuthenticationPrincipal 어노테이션이 만들어진다.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
